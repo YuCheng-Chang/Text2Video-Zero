@@ -17,6 +17,8 @@ from PIL import Image
 from kornia.morphology import dilation
 import sys
 import os
+from ultralytics import YOLO
+
 
 # 獲取當前文件的目錄
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -65,13 +67,11 @@ class TextToVideoPipeline(StableDiffusionPipeline):
                          safety_checker, feature_extractor, requires_safety_checker)
         self._device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         print(f'current device : {self._device}')
-        self.sod_model = U2NETP(3, 1)
-        self.sod_model.load_state_dict(torch.load("U2_net_master/saved_models/u2netp/u2netp.pth", map_location=self._device))
-        # self.sod_model = U2NET(3, 1)
-        # self.sod_model.load_state_dict(torch.load("U2_net_master/saved_models/u2net/u2net.pth", map_location=self._device))
+        self.sod_model = YOLO("yolo11n-seg.pt")  # load an official model
+
         self.sod_model = self.sod_model.to(self._device)
-        self.sod_model.eval()
-        self.sod_transform = T.Compose([RescaleT(320),ToTensorLab(flag=0)])
+        # self.sod_model.eval()
+        # self.sod_transform = T.Compose([RescaleT(320),ToTensorLab(flag=0)])
         self.save_mask_idx=0
         self.save_z0f_idx=0
 
@@ -445,37 +445,52 @@ class TextToVideoPipeline(StableDiffusionPipeline):
                 z0_b = rearrange(z0_b[0], "c f h w -> f h w c")
                 # print(f'z0_b shape={z0_b.shape}')#(8, 512, 512, 3)
                 for frame_idx, z0_f in enumerate(z0_b):
-                    # 將圖像轉換為U-square Net所需的格式
-                    # z0_f = torch.round(
-                    #     z0_f * 255).cpu().numpy().astype(np.uint8)
-                    # z0_f = (z0_f * 255).byte().cpu().numpy()
-                    z0_f=z0_f.cpu().numpy()
-                    # print(f'median z0_f={np.median(z0_f)}')
-                    # print(f'z0_f shape={z0_f.shape}')#(512,512,3)
-                    # 使用U-square Net進行預測
+                    # 確保 z0_f 是在正確設備（CPU 或 GPU）上的 PyTorch 張量
+                    z0_f = torch.tensor(z0_f, dtype=torch.float32, device=self.device)
+                    
+                    # 將值範圍調整到 0-1 之間
+                    z0_f = (z0_f - z0_f.min()) / (z0_f.max() - z0_f.min())
+                    
+                    # 準備 YOLO 模型的輸入
+                    # 1. 確保張量形狀為 (1, 3, 640, 640)
+                    # 2. 調整通道順序從 HWC 到 CHW
+                    # 3. 添加 batch 維度
+                    z0_f_yolo = z0_f.permute(2, 0, 1).unsqueeze(0)
+                    # 使用YOLO進行預測
                     with torch.no_grad():
-                        input_tensor = torch.from_numpy(z0_f).float().to(self.device)
-                        input_tensor = input_tensor.permute(2, 0, 1).unsqueeze(0)  # 調整為BCHW格式
-                        print(f'input_tensor shape before transform:{input_tensor.shape}')
-                        input_tensor = self.sod_transform(input_tensor)
-                        input_tensor = input_tensor.to(self._device)
-                        print(f'input_tensor shape after transform:{input_tensor.shape}')
-                        if input_tensor.dim() == 3:
-                            input_tensor = input_tensor.unsqueeze(0)  # 添加批次維度
-                        print(f'input_tensor shape before sod_model:{input_tensor.shape}')
-                        mask = self.sod_model(input_tensor)
-                        mask = mask[0]
-                        print(f"Mask shape after sod_model: {mask.shape}")
-                        mask = normPred(mask[:,0,:,:]) 
-                        print(f"Mask shape after normPred: {mask.shape}")
-                        mask = resizePred(mask,(h,w))
-                        print(f"Mask shape after resizePred: {mask.shape}, mean: {torch.mean(mask)}")
+                        results = self.sod_model(z0_f_yolo)  # 直接傳入numpy數組
+                        
+                        # 獲取預測結果
+                        if len(results) > 0:
+                            result = results[0]  # 獲取第一個（也是唯一的）結果
+                            masks = result.masks  # 獲取所有實例的 mask
+                            
+                            if masks is not None and len(masks) > 0:
+                                # 合併所有實例的 mask
+                                combined_mask = masks.data.sum(dim=0) > 0
+                                mask = combined_mask.float()  # 轉換為浮點數
+                                
+                                print(f"Mask shape after sod_model: {mask.shape}")
+                                
+                                # 調整 mask 大小
+                                mask = T.Resize(size=(h, w), interpolation=T.InterpolationMode.NEAREST)(mask.unsqueeze(0)).squeeze(0)
+                                
+                                print(f"Mask shape after resize: {mask.shape}, mean: {torch.mean(mask)}")
+                            else:
+                                mask = torch.zeros((h, w), dtype=torch.float32)
+                        else:
+                            mask = torch.zeros((h, w), dtype=torch.float32)
                         
                     # 後處理預測結果
                     mask = (mask > 0.5).float()  # 二值化，閾值可以根據需要調整
                     # print(mask.shape)#(1,1,512,512)
-                    save_image(input_tensor,f'/home/yccra/Text2Video-Zero/SOD_results/z0f_{self.save_z0f_idx}.png')
-                    save_image(mask, f'/home/yccra/Text2Video-Zero/SOD_results/mask_{self.save_mask_idx}.png')
+                    # save_image(z0_f.cpu(),f'/home/yccra/T2Vv2/SOD_results/z0f_{self.save_z0f_idx}.png')
+                    # save_image(mask, f'/home/yccra/T2Vv2/SOD_results/mask_{self.save_mask_idx}.png')
+                    # 保存原始圖像
+                    save_image(z0_f.permute(2, 0, 1), f'/home/yccra/T2Vv2/SOD_results/z0f_{self.save_z0f_idx}.png')
+                    
+                    # 保存 mask
+                    save_image(mask.unsqueeze(0), f'/home/yccra/T2Vv2/SOD_results/mask_{self.save_mask_idx}.png')
                     self.save_mask_idx+=1
                     self.save_z0f_idx+=1
                     # 調整大小和應用膨脹

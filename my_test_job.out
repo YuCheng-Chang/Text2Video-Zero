@@ -1,7 +1,8 @@
 True
 12.4
 NVIDIA H100 80GB HBM3
-sys.path: ['/home/yccra/Text2Video-Zero', '/home/yccra/.conda/envs/T2VZeroNew/lib/python38.zip', '/home/yccra/.conda/envs/T2VZeroNew/lib/python3.8', '/home/yccra/.conda/envs/T2VZeroNew/lib/python3.8/lib-dynload', '/home/yccra/.conda/envs/T2VZeroNew/lib/python3.8/site-packages', '/home/yccra/.conda/envs/T2VZeroNew/lib/python3.8/site-packages/setuptools/_vendor', '/home/yccra/Text2Video-Zero/U2_net_master']
+WARNING ⚠️ Python>=3.10 is required, but Python==3.8.20 is currently installed 
+sys.path: ['/home/yccra/T2Vv2', '/home/yccra/.conda/envs/T2Vv2/lib/python38.zip', '/home/yccra/.conda/envs/T2Vv2/lib/python3.8', '/home/yccra/.conda/envs/T2Vv2/lib/python3.8/lib-dynload', '/home/yccra/.conda/envs/T2Vv2/lib/python3.8/site-packages', '/home/yccra/.conda/envs/T2Vv2/lib/python3.8/site-packages/setuptools/_vendor', '/home/yccra/T2Vv2/U2_net_master']
 cuda
 cuda
 model name=CompVis/stable-diffusion-v1-4
@@ -9,943 +10,771 @@ Module Text2Video
 Model update
 current device : cuda
 Processing chunk 1 / 13, chunk_id = 0, frame_ids = [0, 0, 1, 2, 3, 4, 5, 6]
-xT shape: torch.Size([1, 4, 1, 64, 64])
 t0 = 881 t1 = 941
 Continue DDIM with i = 0, t = 981, latent = torch.Size([1, 4, 64, 64]), device = cuda:0, type = torch.float16
 latent t1 found at i=1, t = 961
 latent t0 found at i = 4, t = 901
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 x_t1:torch.Size([1, 4, 8, 64, 64]) x_t1_1:torch.Size([1, 4, 1, 64, 64]) x_t1_k:torch.Size([1, 4, 7, 64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.03245634585618973
+
+0: 512x512 2 boats, 53.2ms
+Speed: 0.0ms preprocess, 53.2ms inference, 30.3ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.06103515625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.02081131376326084
+
+0: 512x512 (no detections), 4.7ms
+Speed: 0.0ms preprocess, 4.7ms inference, 0.5ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.21127548813819885
+
+0: 512x512 1 boat, 4.8ms
+Speed: 0.0ms preprocess, 4.8ms inference, 1.4ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.031982421875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.04094860702753067
+
+0: 512x512 (no detections), 4.6ms
+Speed: 0.0ms preprocess, 4.6ms inference, 0.5ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.0503542497754097
+
+0: 512x512 3 boats, 4.4ms
+Speed: 0.0ms preprocess, 4.4ms inference, 1.5ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.05859375
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.02644474059343338
+
+0: 512x512 2 boats, 4.4ms
+Speed: 0.0ms preprocess, 4.4ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.03173828125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.04444412887096405
+
+0: 512x512 (no detections), 4.6ms
+Speed: 0.0ms preprocess, 4.6ms inference, 0.5ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.03386469930410385
+
+0: 512x512 1 boat, 4.5ms
+Speed: 0.0ms preprocess, 4.5ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.044921875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 Processing chunk 2 / 13, chunk_id = 7, frame_ids = [0, 7, 8, 9, 10, 11, 12, 13]
-xT shape: torch.Size([1, 4, 1, 64, 64])
 t0 = 881 t1 = 941
 Continue DDIM with i = 0, t = 981, latent = torch.Size([1, 4, 64, 64]), device = cuda:0, type = torch.float16
 latent t1 found at i=1, t = 961
 latent t0 found at i = 4, t = 901
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 x_t1:torch.Size([1, 4, 8, 64, 64]) x_t1_1:torch.Size([1, 4, 1, 64, 64]) x_t1_k:torch.Size([1, 4, 7, 64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.03245634585618973
+
+0: 512x512 2 boats, 15.8ms
+Speed: 0.0ms preprocess, 15.8ms inference, 1.5ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.06103515625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.039088353514671326
+
+0: 512x512 (no detections), 4.8ms
+Speed: 0.0ms preprocess, 4.8ms inference, 0.4ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.22815468907356262
+
+0: 512x512 1 boat, 4.7ms
+Speed: 0.0ms preprocess, 4.7ms inference, 1.3ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.021728515625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.05068742483854294
+
+0: 512x512 2 boats, 4.7ms
+Speed: 0.0ms preprocess, 4.7ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.058837890625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.0531010627746582
+
+0: 512x512 2 boats, 4.5ms
+Speed: 0.0ms preprocess, 4.5ms inference, 1.3ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.0478515625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.04463560879230499
+
+0: 512x512 1 boat, 4.4ms
+Speed: 0.0ms preprocess, 4.4ms inference, 1.3ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.049072265625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.10054189711809158
+
+0: 512x512 (no detections), 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 0.4ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.2060939520597458
+
+0: 512x512 1 airplane, 1 boat, 4.2ms
+Speed: 0.0ms preprocess, 4.2ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.044189453125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 Processing chunk 3 / 13, chunk_id = 14, frame_ids = [0, 14, 15, 16, 17, 18, 19, 20]
-xT shape: torch.Size([1, 4, 1, 64, 64])
 t0 = 881 t1 = 941
 Continue DDIM with i = 0, t = 981, latent = torch.Size([1, 4, 64, 64]), device = cuda:0, type = torch.float16
 latent t1 found at i=1, t = 961
 latent t0 found at i = 4, t = 901
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 x_t1:torch.Size([1, 4, 8, 64, 64]) x_t1_1:torch.Size([1, 4, 1, 64, 64]) x_t1_k:torch.Size([1, 4, 7, 64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.03245634585618973
+
+0: 512x512 2 boats, 5.5ms
+Speed: 0.0ms preprocess, 5.5ms inference, 1.6ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.06103515625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.21317976713180542
+
+0: 512x512 (no detections), 4.9ms
+Speed: 0.0ms preprocess, 4.9ms inference, 0.4ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.02769608050584793
+
+0: 512x512 1 boat, 4.7ms
+Speed: 0.0ms preprocess, 4.7ms inference, 1.3ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.01953125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.013986865058541298
+
+0: 512x512 1 boat, 4.9ms
+Speed: 0.0ms preprocess, 4.9ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.014404296875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.029828239232301712
+
+0: 512x512 1 boat, 6.0ms
+Speed: 0.0ms preprocess, 6.0ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.0283203125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.036294616758823395
+
+0: 512x512 1 boat, 4.6ms
+Speed: 0.0ms preprocess, 4.6ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.02783203125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.051156558096408844
+
+0: 512x512 (no detections), 4.4ms
+Speed: 0.0ms preprocess, 4.4ms inference, 0.5ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.051618028432130814
+
+0: 512x512 1 airplane, 4.4ms
+Speed: 0.0ms preprocess, 4.4ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.009033203125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 Processing chunk 4 / 13, chunk_id = 21, frame_ids = [0, 21, 22, 23, 24, 25, 26, 27]
-xT shape: torch.Size([1, 4, 1, 64, 64])
 t0 = 881 t1 = 941
 Continue DDIM with i = 0, t = 981, latent = torch.Size([1, 4, 64, 64]), device = cuda:0, type = torch.float16
 latent t1 found at i=1, t = 961
 latent t0 found at i = 4, t = 901
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 x_t1:torch.Size([1, 4, 8, 64, 64]) x_t1_1:torch.Size([1, 4, 1, 64, 64]) x_t1_k:torch.Size([1, 4, 7, 64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.03245634585618973
+
+0: 512x512 2 boats, 13.9ms
+Speed: 0.0ms preprocess, 13.9ms inference, 2.0ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.06103515625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.12373717129230499
+
+0: 512x512 2 boats, 4.9ms
+Speed: 0.0ms preprocess, 4.9ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.020751953125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.07486500591039658
+
+0: 512x512 1 boat, 4.7ms
+Speed: 0.0ms preprocess, 4.7ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.00341796875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.007462086621671915
+
+0: 512x512 1 boat, 4.6ms
+Speed: 0.0ms preprocess, 4.6ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.0126953125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.4196327328681946
+
+0: 512x512 1 boat, 4.5ms
+Speed: 0.0ms preprocess, 4.5ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.03271484375
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.296346515417099
+
+0: 512x512 1 boat, 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 1.0ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.03466796875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.25257256627082825
+
+0: 512x512 1 boat, 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.016357421875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.06406824290752411
+
+0: 512x512 2 boats, 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.072265625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 Processing chunk 5 / 13, chunk_id = 28, frame_ids = [0, 28, 29, 30, 31, 32, 33, 34]
-xT shape: torch.Size([1, 4, 1, 64, 64])
 t0 = 881 t1 = 941
 Continue DDIM with i = 0, t = 981, latent = torch.Size([1, 4, 64, 64]), device = cuda:0, type = torch.float16
 latent t1 found at i=1, t = 961
 latent t0 found at i = 4, t = 901
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 x_t1:torch.Size([1, 4, 8, 64, 64]) x_t1_1:torch.Size([1, 4, 1, 64, 64]) x_t1_k:torch.Size([1, 4, 7, 64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.03245634585618973
+
+0: 512x512 2 boats, 5.3ms
+Speed: 0.0ms preprocess, 5.3ms inference, 1.3ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.06103515625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.02444661408662796
+
+0: 512x512 2 boats, 4.7ms
+Speed: 0.0ms preprocess, 4.7ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.03369140625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.24982286989688873
+
+0: 512x512 1 boat, 4.5ms
+Speed: 0.0ms preprocess, 4.5ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.0078125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.3102155923843384
+
+0: 512x512 (no detections), 4.4ms
+Speed: 0.0ms preprocess, 4.4ms inference, 0.5ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.3670869767665863
+
+0: 512x512 (no detections), 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 0.4ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.033035580068826675
+
+0: 512x512 1 boat, 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.033203125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.21165749430656433
+
+0: 512x512 (no detections), 4.2ms
+Speed: 0.0ms preprocess, 4.2ms inference, 0.4ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.13054248690605164
+
+0: 512x512 2 boats, 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.058349609375
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 Processing chunk 6 / 13, chunk_id = 35, frame_ids = [0, 35, 36, 37, 38, 39, 40, 41]
-xT shape: torch.Size([1, 4, 1, 64, 64])
 t0 = 881 t1 = 941
 Continue DDIM with i = 0, t = 981, latent = torch.Size([1, 4, 64, 64]), device = cuda:0, type = torch.float16
 latent t1 found at i=1, t = 961
 latent t0 found at i = 4, t = 901
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 x_t1:torch.Size([1, 4, 8, 64, 64]) x_t1_1:torch.Size([1, 4, 1, 64, 64]) x_t1_k:torch.Size([1, 4, 7, 64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.03245634585618973
+
+0: 512x512 2 boats, 5.0ms
+Speed: 0.0ms preprocess, 5.0ms inference, 1.3ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.06103515625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.04688553512096405
+
+0: 512x512 1 boat, 4.8ms
+Speed: 0.0ms preprocess, 4.8ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.0302734375
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.11201842129230499
+
+0: 512x512 1 boat, 4.6ms
+Speed: 0.0ms preprocess, 4.6ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.004638671875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.08019013702869415
+
+0: 512x512 (no detections), 19.4ms
+Speed: 0.0ms preprocess, 19.4ms inference, 0.5ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.3510330319404602
+
+0: 512x512 (no detections), 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 0.5ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.42268019914627075
+
+0: 512x512 1 boat, 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 1.0ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.024169921875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.388791561126709
+
+0: 512x512 1 boat, 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.009765625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.05820121243596077
+
+0: 512x512 1 boat, 4.2ms
+Speed: 0.0ms preprocess, 4.2ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.0673828125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 Processing chunk 7 / 13, chunk_id = 42, frame_ids = [0, 42, 43, 44, 45, 46, 47, 48]
-xT shape: torch.Size([1, 4, 1, 64, 64])
 t0 = 881 t1 = 941
 Continue DDIM with i = 0, t = 981, latent = torch.Size([1, 4, 64, 64]), device = cuda:0, type = torch.float16
 latent t1 found at i=1, t = 961
 latent t0 found at i = 4, t = 901
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 x_t1:torch.Size([1, 4, 8, 64, 64]) x_t1_1:torch.Size([1, 4, 1, 64, 64]) x_t1_k:torch.Size([1, 4, 7, 64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.03245634585618973
+
+0: 512x512 2 boats, 6.7ms
+Speed: 0.0ms preprocess, 6.7ms inference, 1.5ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.06103515625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.09855909645557404
+
+0: 512x512 1 boat, 5.0ms
+Speed: 0.0ms preprocess, 5.0ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.034423828125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.33784180879592896
+
+0: 512x512 (no detections), 4.5ms
+Speed: 0.0ms preprocess, 4.5ms inference, 0.5ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.10261470079421997
+
+0: 512x512 1 boat, 4.7ms
+Speed: 0.0ms preprocess, 4.7ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.01318359375
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.12322303652763367
+
+0: 512x512 (no detections), 4.5ms
+Speed: 0.0ms preprocess, 4.5ms inference, 0.4ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.3872099220752716
+
+0: 512x512 2 boats, 4.4ms
+Speed: 0.0ms preprocess, 4.4ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.0224609375
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.30775120854377747
+
+0: 512x512 (no detections), 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 0.3ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.3993796110153198
+
+0: 512x512 1 boat, 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.0576171875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 Processing chunk 8 / 13, chunk_id = 49, frame_ids = [0, 49, 50, 51, 52, 53, 54, 55]
-xT shape: torch.Size([1, 4, 1, 64, 64])
 t0 = 881 t1 = 941
 Continue DDIM with i = 0, t = 981, latent = torch.Size([1, 4, 64, 64]), device = cuda:0, type = torch.float16
 latent t1 found at i=1, t = 961
 latent t0 found at i = 4, t = 901
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 x_t1:torch.Size([1, 4, 8, 64, 64]) x_t1_1:torch.Size([1, 4, 1, 64, 64]) x_t1_k:torch.Size([1, 4, 7, 64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.03245634585618973
+
+0: 512x512 2 boats, 5.2ms
+Speed: 0.0ms preprocess, 5.2ms inference, 1.4ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.06103515625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.049547143280506134
+
+0: 512x512 1 boat, 4.6ms
+Speed: 0.0ms preprocess, 4.6ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.03076171875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.020659085363149643
+
+0: 512x512 1 boat, 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.0068359375
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.2996811866760254
+
+0: 512x512 1 boat, 8.6ms
+Speed: 0.0ms preprocess, 8.6ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.008544921875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.12834042310714722
+
+0: 512x512 1 boat, 4.4ms
+Speed: 0.0ms preprocess, 4.4ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.003173828125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.4876177906990051
+
+0: 512x512 (no detections), 4.5ms
+Speed: 0.0ms preprocess, 4.5ms inference, 0.4ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.37506988644599915
+
+0: 512x512 (no detections), 4.5ms
+Speed: 0.0ms preprocess, 4.5ms inference, 0.3ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.15162570774555206
+
+0: 512x512 1 boat, 4.6ms
+Speed: 0.0ms preprocess, 4.6ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.056884765625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 Processing chunk 9 / 13, chunk_id = 56, frame_ids = [0, 56, 57, 58, 59, 60, 61, 62]
-xT shape: torch.Size([1, 4, 1, 64, 64])
 t0 = 881 t1 = 941
 Continue DDIM with i = 0, t = 981, latent = torch.Size([1, 4, 64, 64]), device = cuda:0, type = torch.float16
 latent t1 found at i=1, t = 961
 latent t0 found at i = 4, t = 901
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 x_t1:torch.Size([1, 4, 8, 64, 64]) x_t1_1:torch.Size([1, 4, 1, 64, 64]) x_t1_k:torch.Size([1, 4, 7, 64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.03245634585618973
+
+0: 512x512 2 boats, 15.4ms
+Speed: 0.0ms preprocess, 15.4ms inference, 1.3ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.06103515625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.13662874698638916
+
+0: 512x512 1 boat, 4.5ms
+Speed: 0.0ms preprocess, 4.5ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.021484375
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.00839843787252903
+
+0: 512x512 1 boat, 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.0185546875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.21387292444705963
+
+0: 512x512 (no detections), 4.2ms
+Speed: 0.0ms preprocess, 4.2ms inference, 0.4ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.3900333046913147
+
+0: 512x512 1 boat, 4.2ms
+Speed: 0.0ms preprocess, 4.2ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.0166015625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.39265376329421997
+
+0: 512x512 (no detections), 4.5ms
+Speed: 0.0ms preprocess, 4.5ms inference, 0.4ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.35688477754592896
+
+0: 512x512 (no detections), 4.8ms
+Speed: 0.0ms preprocess, 4.8ms inference, 0.4ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.04774433374404907
+
+0: 512x512 1 boat, 4.6ms
+Speed: 0.0ms preprocess, 4.6ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.0546875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 Processing chunk 10 / 13, chunk_id = 63, frame_ids = [0, 63, 64, 65, 66, 67, 68, 69]
-xT shape: torch.Size([1, 4, 1, 64, 64])
 t0 = 881 t1 = 941
 Continue DDIM with i = 0, t = 981, latent = torch.Size([1, 4, 64, 64]), device = cuda:0, type = torch.float16
 latent t1 found at i=1, t = 961
 latent t0 found at i = 4, t = 901
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 x_t1:torch.Size([1, 4, 8, 64, 64]) x_t1_1:torch.Size([1, 4, 1, 64, 64]) x_t1_k:torch.Size([1, 4, 7, 64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.03245634585618973
+
+0: 512x512 2 boats, 8.0ms
+Speed: 0.0ms preprocess, 8.0ms inference, 1.4ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.06103515625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.28443723917007446
+
+0: 512x512 1 boat, 4.6ms
+Speed: 0.0ms preprocess, 4.6ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.013671875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.1457136571407318
+
+0: 512x512 1 boat, 4.5ms
+Speed: 0.0ms preprocess, 4.5ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.00537109375
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.3205815553665161
+
+0: 512x512 2 boats, 4.6ms
+Speed: 0.0ms preprocess, 4.6ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.013671875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.11621476709842682
+
+0: 512x512 1 boat, 4.4ms
+Speed: 0.0ms preprocess, 4.4ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.01123046875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.28443244099617004
+
+0: 512x512 (no detections), 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 0.4ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.10785749554634094
+
+0: 512x512 (no detections), 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 0.5ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.05339403450489044
+
+0: 512x512 2 boats, 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.056884765625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 Processing chunk 11 / 13, chunk_id = 70, frame_ids = [0, 70, 71, 72, 73, 74, 75, 76]
-xT shape: torch.Size([1, 4, 1, 64, 64])
 t0 = 881 t1 = 941
 Continue DDIM with i = 0, t = 981, latent = torch.Size([1, 4, 64, 64]), device = cuda:0, type = torch.float16
 latent t1 found at i=1, t = 961
 latent t0 found at i = 4, t = 901
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 x_t1:torch.Size([1, 4, 8, 64, 64]) x_t1_1:torch.Size([1, 4, 1, 64, 64]) x_t1_k:torch.Size([1, 4, 7, 64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.03245634585618973
+
+0: 512x512 2 boats, 5.0ms
+Speed: 0.0ms preprocess, 5.0ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.06103515625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.2093491554260254
+
+0: 512x512 1 boat, 4.7ms
+Speed: 0.0ms preprocess, 4.7ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.016845703125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.34185147285461426
+
+0: 512x512 1 person, 1 boat, 4.8ms
+Speed: 0.0ms preprocess, 4.8ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.0185546875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.010574640706181526
+
+0: 512x512 (no detections), 4.6ms
+Speed: 0.0ms preprocess, 4.6ms inference, 0.4ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.013108915649354458
+
+0: 512x512 3 boats, 4.4ms
+Speed: 0.0ms preprocess, 4.4ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.033935546875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.2864592969417572
+
+0: 512x512 (no detections), 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 0.3ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.384321391582489
+
+0: 512x512 (no detections), 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 0.3ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.048778340220451355
+
+0: 512x512 3 boats, 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.059814453125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 Processing chunk 12 / 13, chunk_id = 77, frame_ids = [0, 77, 78, 79, 80, 81, 82, 83]
-xT shape: torch.Size([1, 4, 1, 64, 64])
 t0 = 881 t1 = 941
 Continue DDIM with i = 0, t = 981, latent = torch.Size([1, 4, 64, 64]), device = cuda:0, type = torch.float16
 latent t1 found at i=1, t = 961
 latent t0 found at i = 4, t = 901
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 x_t1:torch.Size([1, 4, 8, 64, 64]) x_t1_1:torch.Size([1, 4, 1, 64, 64]) x_t1_k:torch.Size([1, 4, 7, 64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.03245634585618973
+
+0: 512x512 2 boats, 5.3ms
+Speed: 0.0ms preprocess, 5.3ms inference, 1.5ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.06103515625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.21704579889774323
+
+0: 512x512 1 boat, 4.8ms
+Speed: 0.0ms preprocess, 4.8ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.028564453125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.034127987921237946
+
+0: 512x512 1 boat, 4.6ms
+Speed: 0.0ms preprocess, 4.6ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.035400390625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.27930358052253723
+
+0: 512x512 1 boat, 8.0ms
+Speed: 0.0ms preprocess, 8.0ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.030029296875
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.017636528238654137
+
+0: 512x512 1 boat, 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.017578125
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.30077266693115234
+
+0: 512x512 (no detections), 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 0.5ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.2183861881494522
+
+0: 512x512 (no detections), 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 0.4ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.03240751475095749
+
+0: 512x512 1 boat, 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.041015625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
 Continue DDIM with i = 2, t = 941, latent = torch.Size([8, 4, 64, 64]), device = cuda:0, type = torch.float16
 Processing chunk 13 / 13, chunk_id = 84, frame_ids = [0, 84, 85, 86, 87, 88, 89]
-xT shape: torch.Size([1, 4, 1, 64, 64])
 t0 = 881 t1 = 941
 Continue DDIM with i = 0, t = 981, latent = torch.Size([1, 4, 64, 64]), device = cuda:0, type = torch.float16
 latent t1 found at i=1, t = 961
 latent t0 found at i = 4, t = 901
 Continue DDIM with i = 2, t = 941, latent = torch.Size([7, 4, 64, 64]), device = cuda:0, type = torch.float16
 x_t1:torch.Size([1, 4, 7, 64, 64]) x_t1_1:torch.Size([1, 4, 1, 64, 64]) x_t1_k:torch.Size([1, 4, 6, 64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.03245634585618973
+
+0: 512x512 2 boats, 13.7ms
+Speed: 0.0ms preprocess, 13.7ms inference, 1.4ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.06103515625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.11539331078529358
+
+0: 512x512 1 boat, 4.6ms
+Speed: 0.0ms preprocess, 4.6ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.015625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.2049584537744522
+
+0: 512x512 (no detections), 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 0.4ms postprocess per image at shape (1, 3, 512, 512)
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.046483419835567474
+
+0: 512x512 1 boat, 4.3ms
+Speed: 0.0ms preprocess, 4.3ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.0478515625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.013978248462080956
+
+0: 512x512 1 boat, 4.2ms
+Speed: 0.0ms preprocess, 4.2ms inference, 1.1ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.0146484375
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.20370614528656006
+
+0: 512x512 2 boats, 4.2ms
+Speed: 0.0ms preprocess, 4.2ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.023681640625
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
-input_tensor shape before transform:torch.Size([1, 3, 512, 512])
-input_tensor shape after transform:torch.Size([3, 320, 320])
-input_tensor shape before sod_model:torch.Size([1, 3, 320, 320])
-Mask shape after sod_model: torch.Size([1, 1, 320, 320])
-Mask shape after normPred: torch.Size([1, 320, 320])
-Mask shape after resizePred: torch.Size([64, 64]), mean: 0.0385139025747776
+
+0: 512x512 4 boats, 4.4ms
+Speed: 0.0ms preprocess, 4.4ms inference, 1.2ms postprocess per image at shape (1, 3, 512, 512)
+Mask shape after sod_model: torch.Size([512, 512])
+Mask shape after resize: torch.Size([64, 64]), mean: 0.044677734375
 Mask shape before dilation: torch.Size([1, 1, 64, 64])
 Mask shape after dilation: torch.Size([64, 64])
 Continue DDIM with i = 2, t = 941, latent = torch.Size([7, 4, 64, 64]), device = cuda:0, type = torch.float16

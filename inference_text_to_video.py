@@ -16,6 +16,6 @@ prompt = "A chinese landscape painting of a boat drifting in a river stream at t
 params = {"t0": 44, "t1": 47 , "motion_field_strength_x" : 1, "motion_field_strength_y" : 1, "video_length": 90,"model_name":  model_list[3],"smooth_bg": True}
 # params = {"t0": 44, "t1": 47 , "motion_field_strength_x" : 1, "motion_field_strength_y" : 1, "video_length": 8, "chunk_size": 4, "model_name":  model_list[3]}
 # out_path, fps = f"./text2video_{prompt.replace(' ','_')}.mp4", 4
-out_path, fps = f"/home/yccra/Text2Video-Zero/text2video_landscape.mp4", 30
+out_path, fps = f"/home/yccra/T2Vv2/text2video_landscape.mp4", 30
 _,scores=model.process_text2video(prompt, fps = fps, path = out_path, **params)
-np.save("/home/yccra/Text2Video-Zero/scores.npy", scores)
+np.save("/home/yccra/T2Vv2/scores.npy", scores)
